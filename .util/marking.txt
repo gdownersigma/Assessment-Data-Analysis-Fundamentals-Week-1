@@ -3,6 +3,6 @@ platform linux -- Python 3.12.12, pytest-9.0.1, pluggy-1.6.0
 rootdir: /home/runner/work/Assessment-Data-Analysis-Fundamentals-Week-1/Assessment-Data-Analysis-Fundamentals-Week-1
 collected 43 items
 
-test_queries.py ...FFFFFFFFFF...FFFFFFFFFF...FFFFFFFFFFFFFF              [100%]
+test_queries.py ....FFFFFFFFF....FFFFFFFFF....FFFFFFFFFFFFF              [100%]
 
-======================== 34 failed, 9 passed in 37.12s =========================
+======================== 31 failed, 12 passed in 44.71s ========================
