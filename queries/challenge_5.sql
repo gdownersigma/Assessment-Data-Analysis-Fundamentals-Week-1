@@ -4,3 +4,9 @@
 
 -- Results should be sorted in descending order of price
 
+SELECT product_name, unit_price
+FROM products
+JOIN suppliers USING(supplier_id)
+WHERE city = 'London' OR city = 'Tokyo'
+ORDER BY unit_price DESC
+LIMIT 5;
