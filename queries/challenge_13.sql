@@ -9,4 +9,12 @@
 -- Territory lists should be in alphabetical order
 
 -- Territory lists should be lists, not concatenated strings
-
+SELECT 
+    first_name || ' ' || last_name AS employee,
+    ARRAY_AGG(territory_description ORDER BY territory_description) AS assigned_territories
+FROM employees
+JOIN employee_territories USING(employee_id)
+JOIN territories USING(territory_id)
+WHERE territory_description NOT LIKE '% %'
+GROUP BY employee_id, first_name, last_name
+ORDER BY COUNT(*) DESC,employee_id;
