@@ -3,7 +3,7 @@
 -- Results should be sorted  in descending order by count, with any ties sorted by descending order of category name.
 
 SELECT category_name,
-       COUNT(product_id) as num_products
+        COUNT(product_id) as num_products
 FROM products
 JOIN categories USING (category_id)
 GROUP BY category_name
