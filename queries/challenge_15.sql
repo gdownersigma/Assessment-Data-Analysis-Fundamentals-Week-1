@@ -5,4 +5,9 @@
 -- Y should be counted as a vowel
 
 -- Vowels are not case-sensitive
-
+CREATE FUNCTION count_vowels(input_string VARCHAR)
+RETURNS INT AS $$
+BEGIN
+    RETURN LENGTH(input_string) - LENGTH(REGEXP_REPLACE(LOWER(input_string), '[aeiouy]', '', 'g'));
+END;
+$$ LANGUAGE plpgsql;
