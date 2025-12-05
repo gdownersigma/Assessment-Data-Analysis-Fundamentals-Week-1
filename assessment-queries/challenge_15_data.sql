@@ -1,0 +1,1 @@
+SELECT contact_name, count_vowels(contact_name) FROM customers LIMIT 10;

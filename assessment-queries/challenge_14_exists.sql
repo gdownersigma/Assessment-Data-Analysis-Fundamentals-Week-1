@@ -1,0 +1,1 @@
+select table_name from INFORMATION_SCHEMA.views WHERE table_schema = 'public';
