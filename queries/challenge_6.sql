@@ -6,3 +6,19 @@
 
 -- Results should be sorted alphabetically by supplier and category.
 
+WITH pcs AS(
+    SELECT unit_price,
+            category_name AS category, 
+            company_name AS supplier
+    FROM products
+    JOIN suppliers USING(supplier_id)
+    JOIN categories USING(category_id)
+    )
+
+SELECT supplier,
+        category,
+        CAST(ROUND(AVG(unit_price)) AS INT) as average_price
+FROM pcs
+GROUP BY supplier,category
+HAVING lower(category) LIKE '%m%'
+ORDER BY supplier,category;
